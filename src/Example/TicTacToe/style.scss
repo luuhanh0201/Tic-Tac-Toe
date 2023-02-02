@@ -7,6 +7,34 @@ html {
     font-family: sans-serif;
     user-select: none;
 }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+}
+
+.overlay.show {
+    visibility: visible;
+}
+.game {
+    text-align: center;
+    background-image: url('https://repository-images.githubusercontent.com/193916306/08325c00-9f57-11e9-8b25-b3cad4fa8174');
+    padding: 12px;
+    width: 490px;
+    border-radius: 6px;
+}
+.wrapper {
+    margin-top: 100px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .table {
     margin: 15px;
     width: 500px;
@@ -27,7 +55,7 @@ html {
     font-weight: 600;
     box-shadow: 0 2px 8px #ccc;
     &:hover {
-        background-color: rgb(128, 247, 191,0.5);
+        background-color: rgb(128, 247, 191, 0.5);
     }
 }
 .x {
@@ -38,12 +66,38 @@ html {
     color: #ff6651;
     text-shadow: 1px 1px 4px #2cccff;
 }
-.winner {
-    font-size: 20px;
+.winner,
+.draw {
+    font-size: 26px;
     padding: 25px;
-    color: #ff6651;
+    color: #f32eb5;
+    // transform: translateX(900%);
 }
-
+.informational {
+    border-radius: 5px;
+    top: 20%;
+    position: fixed;
+    background-color: rgb(94, 250, 227);
+    width: 490px;
+    text-align: center;
+    padding: 24px 0;
+    transition: linear;
+    animation: info 0.5s;
+    box-shadow: 0 2px 1px rgba(204, 204, 204, 0.215);
+    font-weight: 600;
+    font-size: 24px;
+    z-index: 4;
+}
+@keyframes info {
+    from {
+        top: -10%;
+        opacity: 0;
+    }
+    to {
+        top: 10%;
+        opacity: 1;
+    }
+}
 .btn {
     padding: 12px 24px;
     outline: none;
@@ -53,4 +107,32 @@ html {
     background-color: #41ee35;
     border-radius: 5px;
     text-align: center;
+}
+.scores {
+    width: 490px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+.playerX {
+    width: 33%;
+    text-align: center;
+    padding: 12px;
+    background-color: #2cccff;
+    border-radius: 5px;
+}
+.playerY {
+    width: 33%;
+    text-align: center;
+    padding: 12px;
+    background-color: #ff6651;
+    border-radius: 5px;
+}
+.draw-score {
+    width: 33%;
+    text-align: center;
+    padding: 12px;
+    background-color: #ccc;
+    border-radius: 5px;
 }
