@@ -1,11 +1,18 @@
 html {
-    width: 700px;
-    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
     user-select: none;
+}
+.wrapper {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .overlay {
     position: fixed;
@@ -15,6 +22,7 @@ html {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     visibility: hidden;
+    z-index: 1;
 }
 
 .overlay.show {
@@ -27,14 +35,7 @@ html {
     width: 490px;
     border-radius: 6px;
 }
-.wrapper {
-    margin-top: 100px;
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+
 .table {
     margin: 15px;
     width: 500px;
@@ -107,6 +108,10 @@ html {
     background-color: #41ee35;
     border-radius: 5px;
     text-align: center;
+    opacity: 0.8;
+    &:hover{
+        opacity: 1;
+    }
 }
 .scores {
     width: 490px;

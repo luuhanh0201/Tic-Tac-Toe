@@ -56,12 +56,6 @@ const Tiktactoe = (props) => {
                 className={`overlay ${winner || (!winner && !table.includes(null)) ? 'show' : ''}`}
                 onClick={handleClickRemote}
             />
-            {/* This will display a "Draw" message if all of the cells have been filled and there is no winner. */}
-
-
-
-
-
             <div className='scores'>
                 <div className='playerX'>Player X:  {scores.X}</div>
                 <div className='playerY'>Player O:  {scores.O}</div>
@@ -72,5 +66,4 @@ const Tiktactoe = (props) => {
         </div>
     );
 }
-
 export default Tiktactoe;
