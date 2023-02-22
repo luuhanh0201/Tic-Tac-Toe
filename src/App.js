@@ -1,9 +1,10 @@
-import Tiktactoe from './Example/TicTacToe';
+import Learn from './Learning/useEffect';
 import './globalStyle.scss'
 function App() {
+
   return (
     <div className="App">
-   <Tiktactoe></Tiktactoe>
+      <Learn></Learn>
     </div>
   );
 }
