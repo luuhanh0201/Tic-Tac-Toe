@@ -1,34 +1,31 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect, useState } from "react";
 
-
-
-
 function Content() {
-    const [data, setData] = useState([])
-    const [type, setType] = useState('posts')
-    // https://jsonplaceholder.typicode.com/posts
-    const tabs = ['posts', 'comments', 'albums','photos','todos','users']
-    
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/${type}`)
-        .then(res => res.json())
-        .then(data => setData(data))
-        
-    }, [type])
-    console.log(data)
+    const [avatar, setAvatar] = useState('')
+
+
+    useEffect(()=>{
+        return ()=>{
+            URL.revokeObjectURL(avatar.preview)
+        }
+    },[avatar])
+    const handleUpdateAvatar = function (e) {
+        const file = e.target.files[0]
+        file.preview = URL.createObjectURL(file)
+
+        setAvatar(file)
+        console.log(file)
+    }
+
     return (
         <div>
-            {tabs.map((item, index) => (
-                <button
-                    key={index}
-                    onClick={() => setType(item)}
-                >{item}</button>
-            ))}
+            <img src={avatar.preview} />
 
-
-            <ul>
-                {data.map(value => (<li>{value.title || value.name}</li>))}
-            </ul>
+            <input
+                type='file'
+                onChange={handleUpdateAvatar}
+            />
         </div>
     );
 }

@@ -1,10 +1,20 @@
-import Learn from './Learning/useEffect';
+import Learn from './Learning/UseRef';
 import './globalStyle.scss'
+import { useState } from 'react';
 function App() {
+
+  const [toggle, setToggle] = useState(false)
+
 
   return (
     <div className="App">
-      <Learn></Learn>
+    <button
+    onClick={()=>{setToggle(!toggle)}}
+    >Toggle</button>
+      
+        {toggle &&
+       <Learn/>}
+       
     </div>
   );
 }
