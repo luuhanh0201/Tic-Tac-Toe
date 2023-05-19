@@ -1,10 +1,10 @@
-import Learn from './Learning';
+import Game from './TicTacToe';
 import './globalStyle.scss'
 function App() {
 
   return (
     <div className="App">
-      <Learn />
+      <Game/>
     </div>
   );
 }
